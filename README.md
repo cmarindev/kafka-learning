@@ -24,7 +24,7 @@ kafka-console-producer --bootstrap-server broker:9092 \
 
 ```
 
-Consume messages from topic
+Consume messages from the topic
   - Wait to see the messages
   - Press Ctrl+C to exit
   
@@ -43,17 +43,3 @@ kafka-console-consumer --bootstrap-server broker:9092 \
 # Resources
 - [Confluent Kafka 101](https://developer.confluent.io/learn-kafka/apache-kafka/events/?utm_medium=sem&utm_source=google&utm_campaign=ch.sem_br.nonbrand_tp.prs_tgt.kafka_mt.xct_rgn.emea_lng.eng_dv.all_con.kafka-general&utm_term=apache+kafka&placement=&device=c&creative=&gclid=CjwKCAjwoMSWBhAdEiwAVJ2ndvuiHzU6biN_sZ4hb1ixOW2wUg2Ew6GgbXQME4C3e6SelDi86HSmChoCzTQQAvD_BwE)
 - [Confluent Quick Start](https://developer.confluent.io/quickstart/kafka-docker/)
-
-docker exec --interactive --tty broker \
-kafka-console-producer --bootstrap-server broker:9092 \
-                       --topic poems
-                       --property parse.key=true \
-                       --property key.separator=":"
-
-docker exec --interactive --tty broker \
-kafka-console-consumer \
-  --topic orders \
-  --bootstrap-server broker:9092 \
-  --from-beginning \
-  --property print.key=true \
-  --property key.separator="-"
